@@ -33,3 +33,25 @@ x = tuple(y) # Back into a tuple
 
 print(x)
 
+# How to loop a Tuple
+
+thisTuple = ("String", "Data", "Science")
+for x in thisTuple:
+    print(x)
+
+
+# Using a while loop 
+thistuple = ("apple", "banana", "cherry")
+i = 0
+while i < len(thistuple):
+  print(thistuple[i])
+  i = i + 1
+
+  # Joining Tuples
+  tuple1 = ("a", "b", "c")
+  tuple2 = (1, 2, 3)
+  
+  tuple3 = tuple1 + tuple2
+  print(tuple3)
+
+  
