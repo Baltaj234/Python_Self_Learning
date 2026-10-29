@@ -113,13 +113,18 @@ Before running the project, make sure the following are installed:
 
 ## Install and start the model runtime
 
-Use the VS Code Terminal and run these commands from the project folder:
+First open the `Local_AI_Study_Assistant` folder in VS Code. In VS Code, open **Terminal > New Terminal**. The terminal should start in the project folder. If it does not, change to that folder using its location on your computer before running the commands below.
 
 ```powershell
-cd "C:\Users\balta\OneDrive\Desktop\projects\Python_Self_Learning\Local_AI_Study_Assistant"
-py -3.12 -m venv .venv
-. .\.venv\Scripts\Activate.ps1
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
+```
+
+These commands create a virtual environment in the project folder, activate it in PowerShell, and install the project's Python dependencies. If you use Command Prompt instead of PowerShell, activate the environment with:
+
+```bat
+.venv\Scripts\activate.bat
 ```
 
 Then install Ollama from the official website:
@@ -204,18 +209,24 @@ If the model is missing, you will see a message telling you to run:
 ollama pull llama3.2:3b
 ```
 
-### Permission or Python issues on Windows
+### Python or virtual environment issues on Windows
 
 If Python cannot run the virtual environment or install packages, use the Python Launcher and a project-local virtual environment:
 
 ```powershell
-py -3.12 -m venv .venv
-. .\.venv\Scripts\Activate.ps1
+py -m venv .venv
+.\.venv\Scripts\Activate.ps1
 ```
 
-### VS Code terminal choice
+If PowerShell blocks activation because of its execution policy, you can use Command Prompt and run:
 
-Use the integrated VS Code terminal, not a separate PowerShell instance outside the project. Run the commands from the project directory so Python can import the project files correctly.
+```bat
+.venv\Scripts\activate.bat
+```
+
+### VS Code terminal and project folder
+
+Use the integrated VS Code terminal and make sure it is in the `Local_AI_Study_Assistant` project folder before running Python commands. One way to do this is to open that folder in VS Code, then choose **Terminal > New Terminal**. This lets Python find the project files without relying on a computer-specific folder location.
 
 ## Limitations of local AI
 
